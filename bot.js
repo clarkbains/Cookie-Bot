@@ -5,7 +5,7 @@ const commands = require('./commands');
 
 function getOpts(filename){
     const fs = require('fs');
-    let path = process.cwd()+"\\"+filename;
+    let path = process.cwd()+"/"+filename;
     var buffer = fs.readFileSync(path);
     let opts = {};
     try{
