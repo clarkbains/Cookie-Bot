@@ -43,7 +43,7 @@ client.on('ready', () => {
 client.on('message', msg => {
 	if (!msg.author.bot){
         //console.log(msg)
-        if (msg.content.match(/^;;cookie/i)) {
+        if (msg.content.match(/^;;cookies?/i)) {
             let msgOpts = argsParse(msg)
             commands.run(client,con, msgOpts)
         }
