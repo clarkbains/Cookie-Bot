@@ -2,7 +2,7 @@ module.exports = {
     run: function (client,sqlclient,opts){
         let served = true
         if (opts.type == "bake"){
-            let cookieNum = opts.content.match(/bake\s*(\d+)/i)[1]
+            let cookieNum = opts.content.match(/bake\s*(\d+)?/i)[1]
             cookieNum = cookieNum || 1
             let timeNow = Math.floor(new Date() / 1000)
             console.log([opts.senderId, opts.channel,cookieNum,timeNow,timeNow,450])
@@ -14,9 +14,6 @@ module.exports = {
 
             })
         
-        }
-        else {
-            served = false
         }
         if (served==false){
             opts.channel.send(`I didn't get that, sorry. Try \`;;cookie bake [cookies]\``)
