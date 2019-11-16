@@ -28,9 +28,9 @@ function argsParse (msg){
     if (msg.content.indexOf("bake")>-1){
         msgOpts.type = "bake"
     }
-    else if (msg.content.indexOf("list")>-1){
+    /*else if (msg.content.indexOf("list")>-1){
         msgOpts.type = "list"
-    }
+    }*/
     else {
         msgOpts.type = "unknown"
     }
@@ -64,5 +64,5 @@ var con = mysql.createConnection({
   });
 
 client.login(opts.discordToken);
-setInterval(function(){commands.notify(client, con)}, 3000);
+setInterval(function(){commands.notify(client, con)}, 1000);
 

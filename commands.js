@@ -1,7 +1,8 @@
 module.exports = {
     run: function (client,sqlclient,opts){
-        let served = true
+        let served = false
         if (opts.type == "bake"){
+            served=true;
             let cookieNum = opts.content.match(/bake\s*(\d+)?/i)[1]
             cookieNum = cookieNum || 1
             let timeNow = Math.floor(new Date() / 1000)
@@ -16,13 +17,12 @@ module.exports = {
         
         }
         if (served==false){
-            opts.channel.send(`I didn't get that, sorry. Try \`;;cookie bake [cookies]\``)
+            opts.client.send(`I didn't get that, sorry. Try \`;;cookie bake [cookies]\``)
         }
     },
     notify: function (client,sqlclient){
-        console.log("Notifying:")
-        const timeToBake = 300;
-        const notifyEvery = 50;
+        const timeToBake = 400;
+        const notifyEvery = Math.floor((Math.random()*30)+30);
         let currentTime = Math.floor(new Date() / 1000)
         let timeStart = currentTime-timeToBake
         let timeNotify = currentTime-notifyEvery
