@@ -28,6 +28,9 @@ function argsParse (msg){
     if (msg.content.indexOf("bake")>-1){
         msgOpts.type = "bake"
     }
+    if (msg.content.indexOf("yeet")>-1){
+        msgOpts.type = "yeet"
+    }
     /*else if (msg.content.indexOf("list")>-1){
         msgOpts.type = "list"
     }*/

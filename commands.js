@@ -16,13 +16,17 @@ module.exports = {
             })
         
         }
+        if (opts.type == "yeet"){
+            served=true;
+                opts.client.send("yeet haha lol *dabs*")
+        }
         if (served==false){
             opts.client.send(`I didn't get that, sorry. Try \`;;cookie bake [cookies]\``)
         }
     },
     notify: function (client,sqlclient){
         const timeToBake = 400;
-        const notifyEvery = Math.floor((Math.random()*30)+30);
+        const notifyEvery = Math.floor((Math.random()*40)+30);
         let currentTime = Math.floor(new Date() / 1000)
         let timeStart = currentTime-timeToBake
         let timeNotify = currentTime-notifyEvery
